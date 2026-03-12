@@ -1,1 +1,14 @@
-
+function mainMenu() {
+  return {
+    inline_keyboard: [
+      [{ text: "🌐 Открыть Web App", web_app: { url: "https://map94.vercel.app/webapp.html" } }],
+      [{ text: "🏢 О компании", callback_data: "about" }],
+      [{ text: "📦 Каталог продукции", callback_data: "catalog" }],
+      [{ text: "📍 Со склада", callback_data: "stock" }],
+      [{ text: "🚚 Под заказ", callback_data: "custom_order" }],
+      [{ text: "📄 Прайс-лист", url: PRICE_URL }],
+      [{ text: "📞 Контакты", callback_data: "contacts" }],
+      [{ text: "✉️ Связаться с менеджером", callback_data: "manager" }]
+    ]
+  };
+}
