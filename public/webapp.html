@@ -1,14 +1,44 @@
-function mainMenu() {
-  return {
-    inline_keyboard: [
-      [{ text: "🌐 Открыть Web App", web_app: { url: "https://map94.vercel.app/webapp.html" } }],
-      [{ text: "🏢 О компании", callback_data: "about" }],
-      [{ text: "📦 Каталог продукции", callback_data: "catalog" }],
-      [{ text: "📍 Со склада", callback_data: "stock" }],
-      [{ text: "🚚 Под заказ", callback_data: "custom_order" }],
-      [{ text: "📄 Прайс-лист", url: PRICE_URL }],
-      [{ text: "📞 Контакты", callback_data: "contacts" }],
-      [{ text: "✉️ Связаться с менеджером", callback_data: "manager" }]
-    ]
-  };
-}
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAP94 Web App</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>MAP94</h1>
+      <p>Металлопрокат и химическая продукция</p>
+    </header>
+
+    <section class="hero card">
+      <h2>Каталог продукции</h2>
+      <p>Поставка со склада и под заказ</p>
+    </section>
+
+    <section class="grid">
+      <button class="card category" data-category="circles">Круги</button>
+      <button class="card category" data-category="channels">Швеллера</button>
+      <button class="card category" data-category="sheets">Листы</button>
+      <button class="card category" data-category="pipes">Трубы</button>
+      <button class="card category" data-category="rebar">Арматура</button>
+      <button class="card category" data-category="caustic">Каустическая сода</button>
+    </section>
+
+    <section class="card form-card">
+      <h3>Оставить заявку</h3>
+      <input id="product" type="text" placeholder="Товар" />
+      <input id="size" type="text" placeholder="Размер / марка / фасовка" />
+      <input id="quantity" type="text" placeholder="Количество" />
+      <input id="city" type="text" placeholder="Город доставки" />
+      <textarea id="comment" placeholder="Комментарий"></textarea>
+      <button id="sendBtn" class="primary-btn">Отправить заявку</button>
+    </section>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
