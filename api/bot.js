@@ -119,7 +119,39 @@ module.exports = async (req, res) => {
       const chatId = msg.chat.id;
       const text = msg.text || "";
       const user = msg.from;
+if (msg.web_app_data) {
+  const raw = msg.web_app_data.data;
 
+  let data = {};
+  try {
+    data = JSON.parse(raw);
+  } catch (e) {
+    data = { raw };
+  }
+
+  if (MANAGER_CHAT_ID) {
+    await sendMessage(
+      MANAGER_CHAT_ID,
+      `<b>Новая заявка из Web App</b>\n\n` +
+      `<b>Имя:</b> ${user.first_name || "-"} ${user.last_name || ""}\n` +
+      `<b>Username:</b> ${user.username ? "@" + user.username : "-"}\n` +
+      `<b>User ID:</b> ${user.id}\n\n` +
+      `<b>Товар:</b> ${data.product || "-"}\n` +
+      `<b>Размер / марка:</b> ${data.size || "-"}\n` +
+      `<b>Количество:</b> ${data.quantity || "-"}\n` +
+      `<b>Город:</b> ${data.city || "-"}\n` +
+      `<b>Комментарий:</b> ${data.comment || "-"}`
+    );
+  }
+
+  await sendMessage(
+    chatId,
+    `Ваша заявка отправлена менеджеру. Мы скоро свяжемся с вами.`,
+    mainMenu()
+  );
+
+  return res.status(200).json({ ok: true });
+}
       if (text === "/start") {
         await sendMessage(
           chatId,
