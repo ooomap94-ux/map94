@@ -21,6 +21,7 @@ async function telegram(method, body) {
 function mainMenu() {
   return {
     inline_keyboard: [
+      [{ text: "🌐 Открыть Web App", web_app: { url: "https://map94.vercel.app/webapp.html" } }],
       [{ text: "🏢 О компании", callback_data: "about" }],
       [{ text: "📦 Каталог продукции", callback_data: "catalog" }],
       [{ text: "📍 Со склада", callback_data: "stock" }],
