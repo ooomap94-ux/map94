@@ -1,8 +1,6 @@
 {
   "name": "map94-bot",
   "version": "1.0.0",
-  "description": "Telegram bot for MAP94 company",
-  "main": "api/bot.js",
   "dependencies": {
     "node-fetch": "^2.6.7"
   }
