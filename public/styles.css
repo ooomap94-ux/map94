@@ -467,3 +467,18 @@ body {
     text-align: left;
   }
 }
+.hero__logo{
+  display:block;
+  width:170px;
+  max-width:100%;
+  margin:0 auto 16px;
+}
+
+.hero__features{
+  margin-top:14px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:14px;
+  color:var(--text-soft);
+}
