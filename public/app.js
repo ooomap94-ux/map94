@@ -129,3 +129,8 @@ contactBtn?.addEventListener("click", () => {
     window.open(url, "_blank");
   }
 });
+const callBtn = document.getElementById("callBtn");
+
+callBtn?.addEventListener("click", () => {
+  window.location.href = "tel:+998712549495";
+});
