@@ -440,3 +440,33 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.btn-premium {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+    linear-gradient(180deg, #1e293b, #0f172a);
+  color: #f8fafc;
+  border-radius: 18px;
+  padding: 16px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 12px 30px rgba(0,0,0,0.28);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-premium:hover {
+  transform: translateY(-1px);
+  border-color: rgba(249,115,22,0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    0 16px 34px rgba(0,0,0,0.34);
+}
+
+.btn-premium:active {
+  transform: scale(0.985);
+}
