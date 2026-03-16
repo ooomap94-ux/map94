@@ -14,31 +14,74 @@
         <h1 class="brand__title">MAP</h1>
         <p class="brand__subtitle">Металлопрокат и химическая продукция</p>
       </div>
-      <div class="badge">В наличии и под заказ</div>
+      <div class="badge">Более 30 лет на рынке</div>
     </div>
 
     <section class="hero glass-card">
-      <h2 class="hero__title">Поставка металлопроката и химической продукции</h2>
+      <img
+        src="https://i.ibb.co/fdL2r8k/map-logo.png"
+        alt="MAP logo"
+        class="hero__logo"
+      />
+      <h2 class="hero__title">Сталь. Надёжность. Поставки без компромиссов.</h2>
       <p class="hero__text">
-        Подберём нужную позицию со склада или под заказ. Отправьте параметры заявки — менеджер свяжется с вами.
+        Поставки металлопроката со склада в Ташкенте и под заказ.
+        Подберём нужную позицию, рассчитаем объём и поможем оформить заявку.
       </p>
     </section>
 
     <section class="section">
-      <h3 class="section__title">Категории</h3>
+      <h3 class="section__title">Быстрые действия</h3>
+
+      <div class="action-grid">
+        <button class="action-card" id="goCatalogBtn" type="button">
+          <span class="action-card__title">Каталог товаров</span>
+          <span class="action-card__text">Посмотреть основные категории продукции</span>
+        </button>
+
+        <button class="action-card" id="stockBtn" type="button">
+          <span class="action-card__title">Проверить наличие</span>
+          <span class="action-card__text">Открыть актуальные остатки на складе</span>
+        </button>
+
+        <button class="action-card action-card--accent" id="goOrderBtn" type="button">
+          <span class="action-card__title">Оформить заказ</span>
+          <span class="action-card__text">Заполнить форму заявки или связаться с менеджером</span>
+        </button>
+
+        <button class="action-card" id="priceBtn" type="button">
+          <span class="action-card__title">Запросить прайс-лист</span>
+          <span class="action-card__text">Оставить запрос на актуальный прайс</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="catalogSection">
+      <h3 class="section__title">Каталог продукции</h3>
 
       <div class="grid">
-        <button class="tile" data-category="Круги">Круги</button>
-        <button class="tile" data-category="Швеллера">Швеллера</button>
-        <button class="tile" data-category="Листы">Листы</button>
-        <button class="tile" data-category="Трубы">Трубы</button>
-        <button class="tile" data-category="Арматура">Арматура</button>
-        <button class="tile" data-category="Каустическая сода">Каустическая сода</button>
+        <button class="tile" data-category="Круги" type="button">Круги</button>
+        <button class="tile" data-category="Швеллера" type="button">Швеллера</button>
+        <button class="tile" data-category="Листы" type="button">Листы</button>
+        <button class="tile" data-category="Трубы" type="button">Трубы</button>
+        <button class="tile" data-category="Арматура" type="button">Арматура</button>
+        <button class="tile" data-category="Каустическая сода" type="button">Каустическая сода</button>
       </div>
     </section>
 
     <section class="section">
-      <h3 class="section__title">Оставить заявку</h3>
+      <h3 class="section__title">Преимущества</h3>
+
+      <div class="info-list glass-card">
+        <div class="info-item">Более 30 лет опыта на рынке Узбекистана</div>
+        <div class="info-item">Поставка со склада в Ташкенте и под заказ</div>
+        <div class="info-item">Сертифицированная продукция</div>
+        <div class="info-item">Мелкие партии и вагонные нормы</div>
+      </div>
+    </section>
+
+    <section class="section" id="orderSection">
+      <h3 class="section__title">Оформить заявку</h3>
 
       <div class="glass-card form-card">
         <div class="form-stack">
@@ -54,6 +97,104 @@
             <button id="sendBtn" class="btn btn--primary" type="button">Отправить заявку</button>
             <button id="contactBtn" class="btn btn--secondary" type="button">Связаться с менеджером</button>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3 class="section__title">О компании</h3>
+
+      <div class="glass-card content-card">
+        <p class="content-text">
+          <strong>ООО «MAP»</strong> — один из надёжных поставщиков металлопроката на рынке Узбекистана
+          с более чем <strong>30-летним опытом работы</strong>. Компания специализируется на оптовых поставках
+          металлопродукции со склада в городе Ташкенте.
+        </p>
+
+        <p class="content-text">
+          В ассортименте представлены листы, трубы, круги, арматура, швеллеры и другие виды металлопроката
+          от производителей стран СНГ и Европы.
+        </p>
+
+        <p class="content-text">
+          Также в продаже имеется <strong>каустическая сода (NaOH)</strong> китайского производства
+          с массовой долей гидроксида натрия не менее <strong>98%</strong>, фасовка по <strong>25 кг</strong>.
+        </p>
+
+        <p class="content-text">
+          Мы поставляем продукцию как со склада, так и под заказ — от небольших партий до крупных объёмов.
+          Вся продукция соответствует требованиям качества, имеет сертификаты и может реализовываться
+          через биржевые торги.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3 class="section__title">Сотрудники</h3>
+
+      <div class="staff-list">
+        <div class="staff-card glass-card">
+          <div class="staff-card__name">Алишер Каримов</div>
+          <div class="staff-card__role">Руководитель отдела продаж</div>
+          <div class="staff-card__meta">Телефон: +998 90 805 18 84</div>
+          <div class="staff-card__meta">Telegram: @mapgroup94</div>
+        </div>
+
+        <div class="staff-card glass-card">
+          <div class="staff-card__name">Дилшод Рахимов</div>
+          <div class="staff-card__role">Менеджер по работе с клиентами</div>
+          <div class="staff-card__meta">Телефон: +998 90 712 34 56</div>
+          <div class="staff-card__meta">Telegram: @map_sales</div>
+        </div>
+
+        <div class="staff-card glass-card">
+          <div class="staff-card__name">Фаррух Юсупов</div>
+          <div class="staff-card__role">Менеджер по корпоративным продажам</div>
+          <div class="staff-card__meta">Телефон: +998 93 541 22 11</div>
+          <div class="staff-card__meta">Telegram: @map_manager</div>
+        </div>
+
+        <div class="staff-card glass-card">
+          <div class="staff-card__name">Бекзод Саидов</div>
+          <div class="staff-card__role">Специалист по поставкам</div>
+          <div class="staff-card__meta">Телефон: +998 97 600 45 77</div>
+          <div class="staff-card__meta">Telegram: @map_supply</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3 class="section__title">Контакты фирмы</h3>
+
+      <div class="glass-card contact-card">
+        <div class="contact-row">
+          <span class="contact-label">Компания</span>
+          <span class="contact-value">ООО «MAP»</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-label">Город</span>
+          <span class="contact-value">Ташкент, Узбекистан</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-label">Раб.</span>
+          <span class="contact-value">+998 71 254 94 95</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-label">Раб.</span>
+          <span class="contact-value">+998 71 255 76 74</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-label">Моб.</span>
+          <span class="contact-value">+998 90 805 18 84</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-label">Telegram</span>
+          <span class="contact-value">@mapgroup94</span>
         </div>
       </div>
     </section>
