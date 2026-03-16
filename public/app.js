@@ -18,7 +18,6 @@ const categoryButtons = document.querySelectorAll(".tile");
 const productInput = document.getElementById("product");
 const sendBtn = document.getElementById("sendBtn");
 
-const goCatalogBtn = document.getElementById("goCatalogBtn");
 const goOrderBtn = document.getElementById("goOrderBtn");
 const priceLinkBtn = document.getElementById("priceLinkBtn");
 const contactsManagersBtn = document.getElementById("contactsManagersBtn");
@@ -71,9 +70,6 @@ categoryButtons.forEach((button) => {
   });
 });
 
-goCatalogBtn?.addEventListener("click", () => {
-  scrollToSection(catalogSection);
-});
 
 goOrderBtn?.addEventListener("click", () => {
   scrollToSection(orderSection);
