@@ -12,23 +12,50 @@ if (tg) {
   }
 }
 
+const PRICE_URL = "https://drive.google.com/drive/folders/1Hxsm1rJMQH8j9zVVU_VKeEWl3i2ZQ0dH?usp=sharing";
+
 const categoryButtons = document.querySelectorAll(".tile");
 const productInput = document.getElementById("product");
 const sendBtn = document.getElementById("sendBtn");
-const contactBtn = document.getElementById("contactBtn");
+
 const goCatalogBtn = document.getElementById("goCatalogBtn");
 const goOrderBtn = document.getElementById("goOrderBtn");
-const stockBtn = document.getElementById("stockBtn");
-const priceBtn = document.getElementById("priceBtn");
+const priceLinkBtn = document.getElementById("priceLinkBtn");
+const contactsManagersBtn = document.getElementById("contactsManagersBtn");
+const openManagersBtn = document.getElementById("openManagersBtn");
+
+const openAboutBtn = document.getElementById("openAboutBtn");
+const openStaffBtn = document.getElementById("openStaffBtn");
+const openFirmContactsBtn = document.getElementById("openFirmContactsBtn");
+
 const catalogSection = document.getElementById("catalogSection");
 const orderSection = document.getElementById("orderSection");
 
-const STOCK_URL = "https://drive.google.com/drive/folders/1Hxsm1rJMQH8j9zVVU_VKeEWl3i2ZQ0dH?usp=sharing";
+const modal = document.getElementById("modal");
+const modalOverlay = document.getElementById("modalOverlay");
+const modalClose = document.getElementById("modalClose");
+const modalTitle = document.getElementById("modalTitle");
+const modalBody = document.getElementById("modalBody");
 
 function scrollToSection(element) {
   if (!element) return;
   element.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+
+function openModal(title, html) {
+  modalTitle.textContent = title;
+  modalBody.innerHTML = html;
+  modal.classList.add("modal--open");
+  document.body.classList.add("body--locked");
+}
+
+function closeModal() {
+  modal.classList.remove("modal--open");
+  document.body.classList.remove("body--locked");
+}
+
+modalOverlay?.addEventListener("click", closeModal);
+modalClose?.addEventListener("click", closeModal);
 
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -52,29 +79,126 @@ goOrderBtn?.addEventListener("click", () => {
   scrollToSection(orderSection);
 });
 
-stockBtn?.addEventListener("click", () => {
+priceLinkBtn?.addEventListener("click", () => {
   if (tg?.openLink) {
-    tg.openLink(STOCK_URL);
+    tg.openLink(PRICE_URL);
   } else {
-    window.open(STOCK_URL, "_blank");
+    window.open(PRICE_URL, "_blank");
   }
 });
 
-priceBtn?.addEventListener("click", () => {
-  const data = {
-    type: "price_request",
-    text: "Клиент запросил прайс-лист"
-  };
+const staffHtml = `
+  <div class="modal-card-list">
+    <div class="modal-card">
+      <div class="modal-person__name">Алишер Каримов</div>
+      <div class="modal-person__role">Руководитель отдела продаж</div>
+      <div class="modal-person__meta">Телефон: +998 90 805 18 84</div>
+      <div class="modal-person__meta">Telegram: @mapgroup94</div>
+    </div>
 
-  if (tg) {
-    tg.sendData(JSON.stringify(data));
-    if (tg.showAlert) {
-      tg.showAlert("Запрос на прайс-лист отправлен менеджеру");
-    }
-  } else {
-    console.log("Запрос прайс-листа:", data);
-    alert("Запрос на прайс-лист отправлен");
-  }
+    <div class="modal-card">
+      <div class="modal-person__name">Дилшод Рахимов</div>
+      <div class="modal-person__role">Менеджер по работе с клиентами</div>
+      <div class="modal-person__meta">Телефон: +998 90 712 34 56</div>
+      <div class="modal-person__meta">Telegram: @map_sales</div>
+    </div>
+
+    <div class="modal-card">
+      <div class="modal-person__name">Фаррух Юсупов</div>
+      <div class="modal-person__role">Менеджер по корпоративным продажам</div>
+      <div class="modal-person__meta">Телефон: +998 93 541 22 11</div>
+      <div class="modal-person__meta">Telegram: @map_manager</div>
+    </div>
+
+    <div class="modal-card">
+      <div class="modal-person__name">Бекзод Саидов</div>
+      <div class="modal-person__role">Специалист по поставкам</div>
+      <div class="modal-person__meta">Телефон: +998 97 600 45 77</div>
+      <div class="modal-person__meta">Telegram: @map_supply</div>
+    </div>
+  </div>
+`;
+
+const aboutHtml = `
+  <div class="modal-card">
+    <p class="modal-text">
+      <strong>ООО «MAP»</strong> — один из надёжных поставщиков металлопроката на рынке Узбекистана
+      с более чем <strong>30-летним опытом работы</strong>. Компания специализируется на оптовых поставках
+      металлопродукции со склада в городе Ташкенте.
+    </p>
+
+    <p class="modal-text">
+      В ассортименте представлены листы, трубы, круги, арматура, швеллеры и другие виды металлопроката
+      от производителей стран СНГ и Европы.
+    </p>
+
+    <p class="modal-text">
+      Также в продаже имеется <strong>каустическая сода (NaOH)</strong> китайского производства
+      с массовой долей гидроксида натрия не менее <strong>98%</strong>, фасовка по <strong>25 кг</strong>.
+    </p>
+
+    <p class="modal-text">
+      Мы поставляем продукцию как со склада, так и под заказ — от небольших партий до крупных объёмов.
+      Вся продукция соответствует требованиям качества, имеет сертификаты и может реализовываться
+      через биржевые торги.
+    </p>
+  </div>
+`;
+
+const firmContactsHtml = `
+  <div class="modal-card-list">
+    <div class="modal-card">
+      <div class="modal-contact-row">
+        <span class="modal-contact-label">Компания</span>
+        <span class="modal-contact-value">ООО «MAP»</span>
+      </div>
+
+      <div class="modal-contact-row">
+        <span class="modal-contact-label">Город</span>
+        <span class="modal-contact-value">Ташкент, Узбекистан</span>
+      </div>
+
+      <div class="modal-contact-row">
+        <span class="modal-contact-label">Раб.</span>
+        <span class="modal-contact-value">+998 71 254 94 95</span>
+      </div>
+
+      <div class="modal-contact-row">
+        <span class="modal-contact-label">Раб.</span>
+        <span class="modal-contact-value">+998 71 255 76 74</span>
+      </div>
+
+      <div class="modal-contact-row">
+        <span class="modal-contact-label">Моб.</span>
+        <span class="modal-contact-value">+998 90 805 18 84</span>
+      </div>
+
+      <div class="modal-contact-row">
+        <span class="modal-contact-label">Telegram</span>
+        <span class="modal-contact-value">@mapgroup94</span>
+      </div>
+    </div>
+  </div>
+`;
+
+contactsManagersBtn?.addEventListener("click", () => {
+  openModal("Сотрудники", staffHtml);
+});
+
+openManagersBtn?.addEventListener("click", () => {
+  openModal("Сотрудники", staffHtml);
+});
+
+openAboutBtn?.addEventListener("click", () => {
+  openModal("О компании", aboutHtml);
+});
+
+openStaffBtn?.addEventListener("click", () => {
+  openModal("Сотрудники", staffHtml);
+});
+
+openFirmContactsBtn?.addEventListener("click", () => {
+  openModal("Контакты фирмы", firmContactsHtml);
 });
 
 sendBtn?.addEventListener("click", () => {
@@ -115,22 +239,4 @@ sendBtn?.addEventListener("click", () => {
     console.log("Отправка данных:", data);
     alert("Заявка сформирована");
   }
-});
-
-contactBtn?.addEventListener("click", () => {
-  const username = "mapgroup94";
-  const url = `https://t.me/${username}`;
-
-  if (tg?.openTelegramLink) {
-    tg.openTelegramLink(url);
-  } else if (tg?.openLink) {
-    tg.openLink(url);
-  } else {
-    window.open(url, "_blank");
-  }
-});
-const callBtn = document.getElementById("callBtn");
-
-callBtn?.addEventListener("click", () => {
-  window.location.href = "tel:+998712549495";
 });
