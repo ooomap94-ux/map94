@@ -112,7 +112,7 @@ const staffHtml = `
 
     <div class="modal-card">
       <div class="modal-person__name">Носиров Козим Аскархужа угли</div>
-      <div class="modal-person__role">Заведующий склада</div>
+      <div class="modal-person__role">Заведующий складом</div>
       <div class="modal-person__meta">Телефон: +99899 859 95 21</div>
     </div>
   </div>
