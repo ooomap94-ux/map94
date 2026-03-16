@@ -5,8 +5,8 @@ if (tg) {
   tg.expand();
 
   try {
-    tg.setHeaderColor("#0f172a");
-    tg.setBackgroundColor("#0b1220");
+    tg.setHeaderColor("#f8fafc");
+    tg.setBackgroundColor("#eef2f6");
   } catch (e) {
     console.log("Telegram WebApp styles not applied:", e);
   }
