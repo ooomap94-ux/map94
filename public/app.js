@@ -90,31 +90,34 @@ priceLinkBtn?.addEventListener("click", () => {
 const staffHtml = `
   <div class="modal-card-list">
     <div class="modal-card">
-      <div class="modal-person__name">Алишер Каримов</div>
-      <div class="modal-person__role">Руководитель отдела продаж</div>
-      <div class="modal-person__meta">Телефон: +998 90 805 18 84</div>
+      <div class="modal-person__name">Агзамходжаев Саидкомил Саидматлабович</div>
+      <div class="modal-person__role">Генеральный директор ООО «МАР»</div>
+      <div class="modal-person__meta">Телефон: +99898 124 99 95</div>
+    </div>
+
+    <div class="modal-card">
+      <div class="modal-person__name">Усманов Дилшод Джасурович</div>
+      <div class="modal-person__role">Заместитель генерального директора ООО «МАР»</div>
+      <div class="modal-person__meta">Телефон: +99893 384 88 80</div>
+    </div>
+
+    <div class="modal-card">
+      <div class="modal-person__name">Ахмедходжаева Дилёра Рахимовна</div>
+      <div class="modal-person__role">Менеджер по продажам ООО «МАР»</div>
+      <div class="modal-person__meta">Телефон: +99890 805 18 84</div>
       <div class="modal-person__meta">Telegram: @mapgroup94</div>
     </div>
 
     <div class="modal-card">
-      <div class="modal-person__name">Дилшод Рахимов</div>
-      <div class="modal-person__role">Менеджер по работе с клиентами</div>
-      <div class="modal-person__meta">Телефон: +998 90 712 34 56</div>
-      <div class="modal-person__meta">Telegram: @map_sales</div>
+      <div class="modal-person__name">Тухбатуллина Зайтуна Фатыховна</div>
+      <div class="modal-person__role">Главный бухгалтер ООО «МАР»</div>
+      <div class="modal-person__meta">Телефон: +99897 750 95 56</div>
     </div>
 
     <div class="modal-card">
-      <div class="modal-person__name">Фаррух Юсупов</div>
-      <div class="modal-person__role">Менеджер по корпоративным продажам</div>
-      <div class="modal-person__meta">Телефон: +998 93 541 22 11</div>
-      <div class="modal-person__meta">Telegram: @map_manager</div>
-    </div>
-
-    <div class="modal-card">
-      <div class="modal-person__name">Бекзод Саидов</div>
-      <div class="modal-person__role">Специалист по поставкам</div>
-      <div class="modal-person__meta">Телефон: +998 97 600 45 77</div>
-      <div class="modal-person__meta">Telegram: @map_supply</div>
+      <div class="modal-person__name">Носиров Козим Аскархужа угли</div>
+      <div class="modal-person__role">Заведующий склада</div>
+      <div class="modal-person__meta">Телефон: +99899 859 95 21</div>
     </div>
   </div>
 `;
