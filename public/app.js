@@ -82,7 +82,24 @@ priceLinkBtn?.addEventListener("click", () => {
     window.open(PRICE_URL, "_blank");
   }
 });
+const managersHtml = `
+  <div class="modal-card-list">
 
+    <div class="modal-card">
+      <div class="modal-person__name">Усманов Дилшод Джасурович</div>
+      <div class="modal-person__role">Заместитель генерального директора ООО «МАР»</div>
+      <div class="modal-person__meta">Телефон: +99893 384 88 80</div>
+    </div>
+
+    <div class="modal-card">
+      <div class="modal-person__name">Ахмедходжаева Дилёра Рахимовна</div>
+      <div class="modal-person__role">Менеджер по продажам ООО «МАР»</div>
+      <div class="modal-person__meta">Телефон: +99890 805 18 84</div>
+      <div class="modal-person__meta"><a href="https://t.me/mapgroup94">Telegram: @mapgroup94</a></div>
+    </div>
+
+  </div>
+`;
 const staffHtml = `
   <div class="modal-card-list">
     <div class="modal-card">
@@ -101,7 +118,7 @@ const staffHtml = `
       <div class="modal-person__name">Ахмедходжаева Дилёра Рахимовна</div>
       <div class="modal-person__role">Менеджер по продажам ООО «МАР»</div>
       <div class="modal-person__meta">Телефон: +99890 805 18 84</div>
-      <div class="modal-person__meta">Telegram: @mapgroup94</div>
+     <div class="modal-person__meta"><a href="https://t.me/mapgroup94">Telegram: @mapgroup94</a></div>
     </div>
 
     <div class="modal-card">
@@ -181,11 +198,11 @@ const firmContactsHtml = `
 `;
 
 contactsManagersBtn?.addEventListener("click", () => {
-  openModal("Сотрудники", staffHtml);
+  openModal("Связаться с менеджером", managersHtml);
 });
 
 openManagersBtn?.addEventListener("click", () => {
-  openModal("Сотрудники", staffHtml);
+  openModal("Связаться с менеджером", managersHtml);
 });
 
 openAboutBtn?.addEventListener("click", () => {
