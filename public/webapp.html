@@ -3,52 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MAP94 Web App</title>
+  <title>MAP</title>
   <link rel="stylesheet" href="/styles.css" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-</head>
-<body>
-  <div class="container">
-    <header class="header">
-      <h1>MAP</h1>
-      <p>Металлопрокат и химическая продукция</p>
-    </header>
-
-    <section class="hero card">
-      <h2>Каталог продукции</h2>
-      <p>Поставка со склада и под заказ</p>
-    </section>
-
-    <section class="grid">
-      <button class="card category" data-category="circles">Круги</button>
-      <button class="card category" data-category="channels">Швеллера</button>
-      <button class="card category" data-category="sheets">Листы</button>
-      <button class="card category" data-category="pipes">Трубы</button>
-      <button class="card category" data-category="rebar">Арматура</button>
-      <button class="card category" data-category="caustic">Каустическая сода</button>
-    </section>
-
-    <section class="card form-card">
-      <h3>Оставить заявку</h3>
-      <input id="product" type="text" placeholder="Товар" />
-      <input id="size" type="text" placeholder="Размер / марка / фасовка" />
-      <input id="quantity" type="text" placeholder="Количество" />
-      <input id="city" type="text" placeholder="Город доставки" />
-      <textarea id="comment" placeholder="Комментарий"></textarea>
-      <button id="sendBtn" class="primary-btn">Отправить заявку</button>
-    </section>
-  </div>
-
-  <script src="/app.js"></script>
-</body>
-</html>
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MAP</title>
-  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <div class="app">
@@ -61,9 +18,9 @@
     </div>
 
     <section class="hero glass-card">
-      <h2 class="hero__title">Каталог продукции</h2>
+      <h2 class="hero__title">Поставка металлопроката и химической продукции</h2>
       <p class="hero__text">
-        Быстрый подбор металлопроката и химической продукции со склада и под заказ.
+        Подберём нужную позицию со склада или под заказ. Отправьте параметры заявки — менеджер свяжется с вами.
       </p>
     </section>
 
@@ -71,12 +28,12 @@
       <h3 class="section__title">Категории</h3>
 
       <div class="grid">
-        <button class="tile tile--accent">Круги</button>
-        <button class="tile">Швеллера</button>
-        <button class="tile">Листы</button>
-        <button class="tile">Трубы</button>
-        <button class="tile">Арматура</button>
-        <button class="tile">Каустическая сода</button>
+        <button class="tile" data-category="Круги">Круги</button>
+        <button class="tile" data-category="Швеллера">Швеллера</button>
+        <button class="tile" data-category="Листы">Листы</button>
+        <button class="tile" data-category="Трубы">Трубы</button>
+        <button class="tile" data-category="Арматура">Арматура</button>
+        <button class="tile" data-category="Каустическая сода">Каустическая сода</button>
       </div>
     </section>
 
@@ -85,19 +42,23 @@
 
       <div class="glass-card form-card">
         <div class="form-stack">
-          <input class="input" type="text" placeholder="Ваше имя" />
-          <input class="input" type="tel" placeholder="Телефон" />
-          <textarea class="textarea" placeholder="Что вас интересует: размер, объем, марка стали, количество"></textarea>
+          <input id="name" class="input" type="text" placeholder="Ваше имя" />
+          <input id="phone" class="input" type="tel" placeholder="Телефон" />
+          <input id="product" class="input" type="text" placeholder="Товар" />
+          <input id="size" class="input" type="text" placeholder="Размер / марка / фасовка" />
+          <input id="quantity" class="input" type="text" placeholder="Количество" />
+          <input id="city" class="input" type="text" placeholder="Город доставки" />
+          <textarea id="comment" class="textarea" placeholder="Комментарий"></textarea>
 
           <div class="btn-row">
-            <button class="btn btn--primary">Отправить заявку</button>
-            <button class="btn btn--secondary">Связаться с менеджером</button>
+            <button id="sendBtn" class="btn btn--primary" type="button">Отправить заявку</button>
+            <button id="contactBtn" class="btn btn--secondary" type="button">Связаться с менеджером</button>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <div class="bottom-bar">@map94bot</div>
+  <script src="/app.js"></script>
 </body>
 </html>
